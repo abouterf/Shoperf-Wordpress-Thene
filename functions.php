@@ -4,6 +4,7 @@ require 'app/autoloader.php';
 add_action("init","registerPostType::register_product_post_type");
 add_action("init","Initializer::start_session");
 add_action("init","Initializer::setup");
+add_action('add_to_cart','Basket::add');
 add_action( 'add_meta_boxes', 'productPrice::adding_custom_meta_boxes');
 add_action( 'save_post', 'productPrice::wpdev_save_price_data');
 add_action( 'add_meta_boxes', 'ProductImages::register_product_images_metabox');

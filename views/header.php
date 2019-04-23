@@ -62,7 +62,7 @@
 						<div class="up-item">
 							<div class="shopping-card">
 								<i class="flaticon-bag"></i>
-								<span>0</span>
+								<span><?php echo basket::total_count();?></span>
 							</div>
 							<a href="#">سبد خرید</a>
 						</div>

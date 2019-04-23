@@ -1,3 +1,12 @@
+<?php if ( isset( $_POST['add_to_cart'] ) ) {
+	$product_id = intval( $_POST['product_id'] );
+    $product_qty = intval($_POST['quantity']);
+    if ($product_id > 0 && $product_qty){
+	    do_action('add_to_cart',$product_id,$product_qty);
+    }
+} ?>
+
+
 <!-- Page info -->
 <div class="page-top-info">
     <div class="container">
@@ -85,28 +94,27 @@
                                 <label for="xxl-size">42</label>
                             </div>
                         </div>
-                        <div class="quantity">
-                            <p>Quantity</p>
-                            <div class="pro-qty"><input type="text" value="1"></div>
-                        </div>
-                        <a href="#" class="site-btn">SHOP NOW</a>
+
+                        <form method="post" class="cart">
+                            <div class="quantity">
+                                <div class="pro-qty">
+                                    <input type="text" name="quantity" value="1">
+                                </div>
+                            </div>
+                            <input type="hidden" name="product_id" value="<?php echo get_the_ID(); ?>">
+                            <button type="submit" name="add_to_cart" class="site-btn">SHOP NOW</button>
+                        </form>
                         <div id="accordion" class="accordion-area">
                             <div class="panel">
                                 <div class="panel-header" id="headingOne">
                                     <button class="panel-link active" data-toggle="collapse" data-target="#collapse1"
-                                            aria-expanded="true" aria-controls="collapse1">information
+                                            aria-expanded="true" aria-controls="collapse1">اطلاعات
                                     </button>
                                 </div>
                                 <div id="collapse1" class="collapse show" aria-labelledby="headingOne"
                                      data-parent="#accordion">
                                     <div class="panel-body">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra
-                                            tempor so dales. Phasellus sagittis auctor gravida. Integer bibendum sodales
-                                            arcu id te mpus. Ut consectetur lacus leo, non scelerisque nulla euismod
-                                            nec.</p>
-                                        <p>Approx length 66cm/26" (Based on a UK size 8 sample)</p>
-                                        <p>Mixed fibres</p>
-                                        <p>The Model wears a UK size 8/ EU size 36/ US size 4 and her height is 5'8"</p>
+										<?php echo the_content(); ?>
                                     </div>
                                 </div>
                             </div>
