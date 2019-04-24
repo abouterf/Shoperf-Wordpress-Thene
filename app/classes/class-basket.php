@@ -52,4 +52,10 @@ class basket {
 			return count( $_SESSION['basket']['items'] );
 		}
 	}
+
+	public static function items() {
+		if (isset($_SESSION['basket']['items']) && count($_SESSION['basket']['items'])){
+			return $_SESSION['basket']['items'];
+		}
+	}
 }

@@ -12,3 +12,4 @@ add_action( 'save_post', 'ProductImages::save_product_images');
 add_filter('manage_products_posts_columns','productPrice::price_column');
 add_action('manage_products_posts_custom_column','productPrice::show_price_column',10,2);
 
+
