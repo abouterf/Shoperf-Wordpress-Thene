@@ -16,76 +16,84 @@
                             <table>
                                 <thead>
                                 <tr>
-                                    <th class="product-th">Product</th>
-                                    <th class="quy-th">Quantity</th>
-                                    <th class="size-th">SizeSize</th>
-                                    <th class="total-th">Price</th>
+                                    <th class="product-th">محصول</th>
+                                    <th class="quy-th">تعداد</th>
+                                    <th class="size-th">سایز</th>
+                                    <th class="total-th">قیمت</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-
                                 <tr>
-
-	                                <?php foreach ( $items as $item ): ?>
+									<?php if ( isset( $_SESSION['basket'] ) ): ?>
+									<?php foreach ( $items as $item ): ?>
                                 <tr>
                                     <td class="product-col">
                                         <img src="img/cart/1.jpg" alt="">
                                         <div class="pc-title">
                                             <h4><?php echo $item['title']; ?></h4>
-                                            <p><?php echo $item['price'];?></p>
+                                            <p><?php echo $item['price']; ?></  p>
                                         </div>
                                     </td>
                                     <td class="quy-col">
                                         <div class="quantity">
                                             <div class="pro-qty">
-                                                <input type="text" value="1">
+                                                <input name="qty" type="text" value="<?php echo $item['count'] ?>">
                                             </div>
                                         </div>
                                     </td>
                                     <td class="size-col"><h4>Size M</h4></td>
-                                    <td class="total-col"><h4><?php echo $item['price'];?></h4></td>
+                                    <td class="total-col"><h4><?php echo $item['price'] * $item['count']; ?></h4></td>
                                 </tr>
-                                <?php endforeach; ?>
-<!--                                    <td class="product-col">-->
-<!--                                        <img src="img/cart/2.jpg" alt="">-->
-<!--                                        <div class="pc-title">-->
-<!--                                            <h4>Ruffle Pink Top</h4>-->
-<!--                                            <p>$45.90</p>-->
-<!--                                        </div>-->
-<!--                                    </td>-->
-<!--                                    <td class="quy-col">-->
-<!--                                        <div class="quantity">-->
-<!--                                            <div class="pro-qty">-->
-<!--                                                <input type="text" value="1">-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </td>-->
-<!--                                    <td class="size-col"><h4>Size M</h4></td>-->
-<!--                                    <td class="total-col"><h4>$45.90</h4></td>-->
-<!--                                </tr>-->
-<!--                                <tr>-->
-<!--                                    <td class="product-col">-->
-<!--                                        <img src="img/cart/3.jpg" alt="">-->
-<!--                                        <div class="pc-title">-->
-<!--                                            <h4>Skinny Jeans</h4>-->
-<!--                                            <p>$45.90</p>-->
-<!--                                        </div>-->
-<!--                                    </td>-->
-<!--                                    <td class="quy-col">-->
-<!--                                        <div class="quantity">-->
-<!--                                            <div class="pro-qty">-->
-<!--                                                <input type="text" value="1">-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </td>-->
-<!--                                    <td class="size-col"><h4>Size M</h4></td>-->
-<!--                                    <td class="total-col"><h4>$45.90</h4></td>-->
-<!--                                </tr>-->
+
+
+								<?php endforeach; ?>
+                                <?php else: ?>
+                                    <br><br>
+                                <h5 class="error" dir="rtl" style="float: right">محصولی موجود نیست.</h5>
+                                    <br><br>
+								<?php endif; ?>
+
+
+                                <!--                                    <td class="product-col">-->
+                                <!--                                        <img src="img/cart/2.jpg" alt="">-->
+                                <!--                                        <div class="pc-title">-->
+                                <!--                                            <h4>Ruffle Pink Top</h4>-->
+                                <!--                                            <p>$45.90</p>-->
+                                <!--                                        </div>-->
+                                <!--                                    </td>-->
+                                <!--                                    <td class="quy-col">-->
+                                <!--                                        <div class="quantity">-->
+                                <!--                                            <div class="pro-qty">-->
+                                <!--                                                <input type="text" value="1">-->
+                                <!--                                            </div>-->
+                                <!--                                        </div>-->
+                                <!--                                    </td>-->
+                                <!--                                    <td class="size-col"><h4>Size M</h4></td>-->
+                                <!--                                    <td class="total-col"><h4>$45.90</h4></td>-->
+                                <!--                                </tr>-->
+                                <!--                                <tr>-->
+                                <!--                                    <td class="product-col">-->
+                                <!--                                        <img src="img/cart/3.jpg" alt="">-->
+                                <!--                                        <div class="pc-title">-->
+                                <!--                                            <h4>Skinny Jeans</h4>-->
+                                <!--                                            <p>$45.90</p>-->
+                                <!--                                        </div>-->
+                                <!--                                    </td>-->
+                                <!--                                    <td class="quy-col">-->
+                                <!--                                        <div class="quantity">-->
+                                <!--                                            <div class="pro-qty">-->
+                                <!--                                                <input type="text" value="1">-->
+                                <!--                                            </div>-->
+                                <!--                                        </div>-->
+                                <!--                                    </td>-->
+                                <!--                                    <td class="size-col"><h4>Size M</h4></td>-->
+                                <!--                                    <td class="total-col"><h4>$45.90</h4></td>-->
+                                <!--                                </tr>-->
                                 </tbody>
                             </table>
                         </div>
                         <div class="total-cost">
-                            <h6>Total <span>$99.90</span></h6>
+                            <h6>Total <span><?php echo basket::total_price(); ?></span></h6>
                         </div>
                     </div>
                 </div>

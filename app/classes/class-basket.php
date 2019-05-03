@@ -53,6 +53,16 @@ class basket {
 		}
 	}
 
+	public static function total_price(  ) {
+		if (isset($_SESSION['basket'])){
+			return array_reduce($_SESSION['basket']['items'],function ($total,$item){
+				$total +=$item['price']*$item['count'];
+				return $total;
+			},0);
+
+		}
+			}
+
 	public static function items() {
 		if (isset($_SESSION['basket']['items']) && count($_SESSION['basket']['items'])){
 			return $_SESSION['basket']['items'];

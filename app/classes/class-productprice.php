@@ -40,7 +40,7 @@ class productPrice {
 
 	public static function show_product_price( $post_id ) {
 		$value = get_post_meta( $post_id, '_save_price_value_key', true );
-		echo $value;
+		return $value;
 	}
 
 	public static function render_price_for_present( $post_id ) {
@@ -62,3 +62,4 @@ class productPrice {
 		}
 	}
 }
+

@@ -1,5 +1,5 @@
 <?php
 get_header();
-View::render('content');
+View::render( 'content' );
 get_footer();
 ?>
