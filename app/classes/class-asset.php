@@ -17,4 +17,3 @@ class Asset {
 		echo $img_file_path;
 	}
 }
-new Asset();

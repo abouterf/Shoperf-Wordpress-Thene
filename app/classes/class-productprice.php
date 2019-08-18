@@ -40,12 +40,14 @@ class productPrice {
 
 	public static function show_product_price( $post_id ) {
 		$value = get_post_meta( $post_id, '_save_price_value_key', true );
+
 		return $value;
 	}
 
 	public static function render_price_for_present( $post_id ) {
 		$data       = self::show_product_price( $post_id );
-		$final_data = ' تومان' . $data;
+		$data       = number_format( $data );
+		$final_data =  $data . 'تومان';
 		echo $final_data;
 	}
 
@@ -55,10 +57,10 @@ class productPrice {
 		return $columns;
 	}
 
-	public static function show_price_column( $columns , $post_id ) {
-		if ($columns == 'product_price'){
-			$product_price = get_post_meta($post_id,'_save_price_value_key',true);
-			echo number_format($product_price);
+	public static function show_price_column( $columns, $post_id ) {
+		if ( $columns == 'product_price' ) {
+			$product_price = get_post_meta( $post_id, '_save_price_value_key', true );
+			echo number_format( $product_price );
 		}
 	}
 }

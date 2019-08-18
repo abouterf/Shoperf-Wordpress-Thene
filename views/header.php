@@ -32,9 +32,9 @@
 </head>
 <body <?php body_class(); ?>>
 <!-- Page Preloder -->
-<div id="preloder">
-	<div class="loader"></div>
-</div>
+    <!--<div id="preloder">-->
+    <!--	<div class="loader"></div>-->
+    <!--</div>-->
 
 <!-- Header section -->
 <header class="header-section" dir="rtl">
@@ -74,33 +74,38 @@
 	<nav class="main-navbar" dir="rtl">
 		<div class="container">
 			<!-- menu -->
-			<ul class="main-menu">
-				<li><a href="#">خانه</a></li>
-				<li><a href="#">زنانه</a></li>
-				<li><a href="#">مردانه</a></li>
-				<li><a href="#">جواهرات
-						<span class="new">جدید</span>
-					</a></li>
-				<li><a href="#">کفش</a>
-					<ul class="sub-menu">
-						<li><a href="#">ساقدار</a></li>
-						<li><a href="#">دمپایی ها</a></li>
-						<li><a href="#">رسمی</a></li>
-						<li><a href="#">چکمه ها</a></li>
-						<li><a href="#">کتانی ها</a></li>
-					</ul>
-				</li>
-				<li><a href="#">صفحات</a>
-					<ul class="sub-menu">
-						<li><a href="./product.html">صفحه محصول</a></li>
-						<li><a href="./category.html">صفحه دسته بندی ها</a></li>
-						<li><a href="./cart.html">صفحه پرداخت</a></li>
-						<li><a href="./checkout.html">صفحه تایید</a></li>
-						<li><a href="./contact.html">ارتباط با ما</a></li>
-					</ul>
-				</li>
-				<li><a href="#">بلاگ</a></li>
-			</ul>
+<!--			<ul class="main-menu">-->
+<!--				<li><a href="#">خانه</a></li>-->
+<!--				<li><a href="#">زنانه</a></li>-->
+<!--				<li><a href="#">مردانه</a></li>-->
+<!--				<li><a href="#">جواهرات-->
+<!--						<span class="new">جدید</span>-->
+<!--					</a></li>-->
+<!--				<li><a href="#">کفش</a>-->
+<!--					<ul class="sub-menu">-->
+<!--						<li><a href="#">ساقدار</a></li>-->
+<!--						<li><a href="#">دمپایی ها</a></li>-->
+<!--						<li><a href="#">رسمی</a></li>-->
+<!--						<li><a href="#">چکمه ها</a></li>-->
+<!--						<li><a href="#">کتانی ها</a></li>-->
+<!--					</ul>-->
+<!--				</li>-->
+<!--				<li><a href="#">صفحات</a>-->
+<!--					<ul class="sub-menu">-->
+<!--						<li><a href="./product.html">صفحه محصول</a></li>-->
+<!--						<li><a href="./category.html">صفحه دسته بندی ها</a></li>-->
+<!--						<li><a href="./cart.html">صفحه پرداخت</a></li>-->
+<!--						<li><a href="./checkout.html">صفحه تایید</a></li>-->
+<!--						<li><a href="./contact.html">ارتباط با ما</a></li>-->
+<!--					</ul>-->
+<!--				</li>-->
+<!--				<li><a href="#">بلاگ</a></li>-->
+<!--			</ul>-->
+            <?php if (has_nav_menu('top-bar')): ?>
+            <?php wp_nav_menu(array(
+                    'theme_location' => 'top-bar'
+                )); ?>
+            <?php endif; ?>
 		</div>
 	</nav>
 

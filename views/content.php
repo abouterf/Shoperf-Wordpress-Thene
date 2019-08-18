@@ -1,6 +1,6 @@
 <!-- Hero section -->
 <?php
-$product_query = new WP_Query( array('post_type' => 'products') );
+$product_query = new WP_Query( array( 'post_type' => 'products' ) );
 ?>
 <section class="hero-section">
     <div class="hero-slider owl-carousel">
@@ -92,77 +92,78 @@ $product_query = new WP_Query( array('post_type' => 'products') );
             <h2>آخرین محصولات</h2>
         </div>
         <div class="product-slider owl-carousel">
-            <?php if ( $product_query->have_posts() ) : ?>
-            <?php while ( $product_query->have_posts() ) : $product_query->the_post(); ?>
+			<?php if ( $product_query->have_posts() ) : ?>
+				<?php while ( $product_query->have_posts() ) : $product_query->the_post(); ?>
                     <div class="product-item">
                         <div class="pi-pic">
                             <img src="<?php Asset::img( 'product/1.jpg' ) ?>" alt="">
                             <div class="pi-links">
-                                <a href="?add=<?php echo($i); ?>" class="add-card" name="add_to_cart"><i class="flaticon-bag"></i><span>افزودن به سبد</span></a>
+                                <a href="?add=<?php echo( $i ); ?>" class="add-card" name="add_to_cart"><i
+                                            class="flaticon-bag"></i><span>افزودن به سبد</span></a>
                                 <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>
                             </div>
                         </div>
                         <div class="pi-text">
-                            <h6><?php productPrice::render_price_for_present($post->ID);?></h6>
-                           <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+                            <h6><?php productPrice::render_price_for_present( get_the_ID() ); ?></h6>
+                            <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
                         </div>
                     </div>
-            <?php endwhile; ?>
-            <?php endif; ?>
+				<?php endwhile; ?>
+			<?php endif; ?>
 
-<!--            <div class="product-item">-->
-<!--                <div class="pi-pic">-->
-<!--                    <div class="tag-new">جدید</div>-->
-<!--                    <img src="--><?php //Asset::img( 'product/2.jpg' ) ?><!--" alt="">-->
-<!--                    <div class="pi-links">-->
-<!--                        <a href="#" class="add-card"><i class="flaticon-bag"></i><span>افزودن به سبد</span></a>-->
-<!--                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="pi-text">-->
-<!--                    <h6>35 تومان</h6>-->
-<!--                    <p>تاپ مشکی خوشگل</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="product-item">-->
-<!--                <div class="pi-pic">-->
-<!--                    <img src="--><?php //Asset::img( 'product/3.jpg' ) ?><!--" alt="">-->
-<!--                    <div class="pi-links">-->
-<!--                        <a href="#" class="add-card"><i class="flaticon-bag"></i><span>افزودن به سبد</span></a>-->
-<!--                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="pi-text">-->
-<!--                    <h6>35 تومان</h6>-->
-<!--                    <p>تاپ خوشگل صورتی </p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="product-item">-->
-<!--                <div class="pi-pic">-->
-<!--                    <img src="--><?php //Asset::img( 'product/4.jpg' ) ?><!--" alt="">-->
-<!--                    <div class="pi-links">-->
-<!--                        <a href="#" class="add-card"><i class="flaticon-bag"></i><span>افزودن به سبد</span></a>-->
-<!--                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="pi-text">-->
-<!--                    <h6>35 تومان</h6>-->
-<!--                    <p>تاپ صورتی خوشگل </p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="product-item">-->
-<!--                <div class="pi-pic">-->
-<!--                    <img src="--><?php //Asset::img( 'product/6.jpg' ) ?><!--" alt="">-->
-<!--                    <div class="pi-links">-->
-<!--                        <a href="#" class="add-card"><i class="flaticon-bag"></i><span>افزودن به سبد</span></a>-->
-<!--                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="pi-text">-->
-<!--                    <h6>35 تومان</h6>-->
-<!--                    <p>تاپ صورتی خوشگل </p>-->
-<!--                </div>-->
-<!--            </div>-->
+            <!--            <div class="product-item">-->
+            <!--                <div class="pi-pic">-->
+            <!--                    <div class="tag-new">جدید</div>-->
+            <!--                    <img src="--><?php //Asset::img( 'product/2.jpg' ) ?><!--" alt="">-->
+            <!--                    <div class="pi-links">-->
+            <!--                        <a href="#" class="add-card"><i class="flaticon-bag"></i><span>افزودن به سبد</span></a>-->
+            <!--                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--                <div class="pi-text">-->
+            <!--                    <h6>35 تومان</h6>-->
+            <!--                    <p>تاپ مشکی خوشگل</p>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--            <div class="product-item">-->
+            <!--                <div class="pi-pic">-->
+            <!--                    <img src="--><?php //Asset::img( 'product/3.jpg' ) ?><!--" alt="">-->
+            <!--                    <div class="pi-links">-->
+            <!--                        <a href="#" class="add-card"><i class="flaticon-bag"></i><span>افزودن به سبد</span></a>-->
+            <!--                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--                <div class="pi-text">-->
+            <!--                    <h6>35 تومان</h6>-->
+            <!--                    <p>تاپ خوشگل صورتی </p>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--            <div class="product-item">-->
+            <!--                <div class="pi-pic">-->
+            <!--                    <img src="--><?php //Asset::img( 'product/4.jpg' ) ?><!--" alt="">-->
+            <!--                    <div class="pi-links">-->
+            <!--                        <a href="#" class="add-card"><i class="flaticon-bag"></i><span>افزودن به سبد</span></a>-->
+            <!--                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--                <div class="pi-text">-->
+            <!--                    <h6>35 تومان</h6>-->
+            <!--                    <p>تاپ صورتی خوشگل </p>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--            <div class="product-item">-->
+            <!--                <div class="pi-pic">-->
+            <!--                    <img src="--><?php //Asset::img( 'product/6.jpg' ) ?><!--" alt="">-->
+            <!--                    <div class="pi-links">-->
+            <!--                        <a href="#" class="add-card"><i class="flaticon-bag"></i><span>افزودن به سبد</span></a>-->
+            <!--                        <a href="#" class="wishlist-btn"><i class="flaticon-heart"></i></a>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--                <div class="pi-text">-->
+            <!--                    <h6>35 تومان</h6>-->
+            <!--                    <p>تاپ صورتی خوشگل </p>-->
+            <!--                </div>-->
+            <!--            </div>-->
         </div>
     </div>
 </section>

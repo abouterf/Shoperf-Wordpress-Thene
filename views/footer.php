@@ -7,9 +7,12 @@
 			<div class="row">
 				<div class="col-lg-3 col-sm-6">
 					<div class="footer-widget about-widget">
-						<h2>درباره</h2>
-						<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
-						<img src="img/cards.png" alt="">
+                        <?php if (is_active_sidebar('wpdev-main-sidebar')): ?>
+                            <?php dynamic_sidebar('wpdev-main-sidebar') ?>
+                        <?php endif; ?>
+<!--						<h2>درباره</h2>-->
+<!--						<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>-->
+<!--						<img src="img/cards.png" alt="">-->
 					</div>
 				</div>
 				<div class="col-lg-3 col-sm-6">

@@ -55,7 +55,7 @@
                     </div>
                     <div class="col-lg-6 product-details">
                         <h2 class="p-title"><?php the_title(); ?></h2>
-                        <h3 class="p-price"><?php productPrice::render_price_for_present( $post->ID ); ?></h3>
+                        <h3 class="p-price"><?php productPrice::render_price_for_present( get_the_ID() ); ?></h3>
                         <h4 class="p-stock">Available: <span>In Stock</span></h4>
                         <div class="p-rating">
                             <i class="fa fa-star-o"></i>
