@@ -17,7 +17,6 @@ class View {
 		$view_name = str_replace( '.', DIRECTORY_SEPARATOR, $view_name );
 		$view_name = THEME_VIEW . DIRECTORY_SEPARATOR . $view_name . '.php';
 		get_template_part( $view_name . '.php' );
-		include $view_name;
 	}
 
 	private static function render_partial_file( $view_name ) {
